@@ -1,0 +1,49 @@
+/* 全局覆盖 Element Plus 消息样式，匹配首页黑色极简风 */
+
+.el-message {
+  min-width: 240px;
+  padding: 14px 24px;
+  background: #000 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4) !important;
+  top: 80px !important;
+}
+
+.el-message__content {
+  color: #fff !important;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.el-message__icon {
+  color: #fff !important;
+}
+
+/* 成功：白色对勾 */
+.el-message--success .el-message__icon {
+  color: #fff !important;
+}
+
+/* 警告：浅灰 */
+.el-message--warning .el-message__icon {
+  color: #aaa !important;
+}
+
+/* 错误：淡红，但整体还是黑色背景 */
+.el-message--error .el-message__icon {
+  color: #ff6b6b !important;
+}
+
+.el-message--error .el-message__content {
+  color: #fff !important;
+}
+
+/* 关闭按钮 */
+.el-message .el-message__closeBtn {
+  color: #666 !important;
+}
+
+.el-message .el-message__closeBtn:hover {
+  color: #fff !important;
+}
