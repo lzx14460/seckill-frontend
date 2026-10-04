@@ -27,6 +27,8 @@
 
     <!-- Hero 横幅（黑色） -->
     <section class="hero">
+      <div class="hero-grid-bg"></div>
+
       <div class="hero-inner">
         <div class="hero-left">
           <div class="hero-tag">FLASH SALE</div>
@@ -43,25 +45,69 @@
               <span class="cd-unit">{{ countdown.s }}</span>
             </div>
           </div>
+
+          <!-- 数据小卡片 -->
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-num">1000+</div>
+              <div class="hero-stat-label">今日已抢</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">100</div>
+              <div class="hero-stat-label">剩余库存</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">99%</div>
+              <div class="hero-stat-label">抢购成功率</div>
+            </div>
+          </div>
+
+          <!-- 活动标签 -->
+          <div class="hero-tags">
+            <span class="hero-tag-item">✓ 品牌正品</span>
+            <span class="hero-tag-item">✓ 假一赔十</span>
+            <span class="hero-tag-item">✓ 限时秒杀</span>
+            <span class="hero-tag-item">✓ 闪电发货</span>
+          </div>
         </div>
 
+        <!-- 右侧：三列滚动图片墙 -->
         <div class="hero-right">
-          <div class="hero-stats">
-            <div class="stat-item">
-              <div class="stat-num">1000+</div>
-              <div class="stat-label">今日已抢</div>
+          <div class="image-wall">
+            <!-- 左列：向上滚 -->
+            <div class="wall-column">
+              <div class="wall-track wall-track--up">
+                <div v-for="(img, i) in wallImagesLeft" :key="'L' + i" class="wall-item">
+                  <img :src="img" alt="" />
+                </div>
+                <div v-for="(img, i) in wallImagesLeft" :key="'L-copy' + i" class="wall-item">
+                  <img :src="img" alt="" />
+                </div>
+              </div>
             </div>
-            <div class="stat-item">
-              <div class="stat-num">100</div>
-              <div class="stat-label">剩余库存</div>
+
+            <!-- 中列：向下滚 -->
+            <div class="wall-column">
+              <div class="wall-track wall-track--down">
+                <div v-for="(img, i) in wallImagesMid" :key="'M' + i" class="wall-item">
+                  <img :src="img" alt="" />
+                </div>
+                <div v-for="(img, i) in wallImagesMid" :key="'M-copy' + i" class="wall-item">
+                  <img :src="img" alt="" />
+                </div>
+              </div>
             </div>
-            <div class="stat-item">
-              <div class="stat-num">99%</div>
-              <div class="stat-label">抢购成功率</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">24h</div>
-              <div class="stat-label">全天候服务</div>
+
+            <!-- 右列：向上滚 -->
+            <div class="wall-column">
+              <div class="wall-track wall-track--up">
+                <div v-for="(img, i) in wallImagesRight" :key="'R' + i" class="wall-item">
+                  <img :src="img" alt="" />
+                </div>
+                <div v-for="(img, i) in wallImagesRight" :key="'R-copy' + i" class="wall-item">
+                  <img :src="img" alt="" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -70,6 +116,20 @@
 
     <!-- 商品区（白色） -->
     <section class="goods-section">
+      <!-- 滚动播报 -->
+      <div class="marquee">
+        <div class="marquee-track">
+          <span class="marquee-item">🎉 用户 138****5120 刚刚抢到了 iPhone 16 Pro</span>
+          <span class="marquee-item">🎉 用户 186****3847 刚刚抢到了 AirPods Pro 2</span>
+          <span class="marquee-item">🎉 用户 150****9912 刚刚抢到了 MacBook Pro 14</span>
+          <span class="marquee-item">🎉 用户 139****2233 刚刚抢到了 iPad Pro 12.9</span>
+          <span class="marquee-item">🎉 用户 138****5120 刚刚抢到了 iPhone 16 Pro</span>
+          <span class="marquee-item">🎉 用户 186****3847 刚刚抢到了 AirPods Pro 2</span>
+          <span class="marquee-item">🎉 用户 150****9912 刚刚抢到了 MacBook Pro 14</span>
+          <span class="marquee-item">🎉 用户 139****2233 刚刚抢到了 iPad Pro 12.9</span>
+        </div>
+      </div>
+
       <div class="tabs">
         <div
           v-for="tab in tabs"
@@ -131,6 +191,29 @@ const tabs = ['全部', '数码', '家电', '服饰', '美妆', '食品', '其�
 
 const defaultImage = 'https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400&h=400&fit=crop'
 
+// ========== 图片墙数据 ==========
+const wallImagesLeft = [
+  'https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=300&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=300&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=300&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300&h=400&fit=crop'
+]
+
+const wallImagesMid = [
+  'https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=300&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1583394838336-acd977736f90?w=300&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=300&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1592434134753-a70baf7979d5?w=300&h=400&fit=crop'
+]
+
+const wallImagesRight = [
+  'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1560343090-f0409e92791a?w=300&h=400&fit=crop'
+]
+
+// ========== 商品数据 ==========
 const goodsList = ref([
   { id: 1, name: '限时秒杀商品 A', seckillPrice: 4999, originalPrice: 8999, stock: 100 }
 ])
@@ -170,7 +253,7 @@ const handleSeckill = async (goods) => {
   }
 }
 
-const onLoginSuccess = () => ElMessage.success('欢迎回来')
+const onLoginSuccess = () => toast.success('欢迎回来')
 
 const goOrder = () => {
   if (!userStore.isLogin()) {
@@ -183,7 +266,7 @@ const goOrder = () => {
 const handleLogout = async () => {
   await request.get('/user/logout')
   userStore.clearUser()
-  ElMessage.success('已退出登录')
+  toast.info('已退出登录')
 }
 
 const getStockPercent = (goods) => {
@@ -310,6 +393,20 @@ onMounted(() => {
   background: #000;
   color: #fff;
   padding: 80px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 80%);
 }
 
 .hero-inner {
@@ -319,6 +416,8 @@ onMounted(() => {
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-tag {
@@ -380,36 +479,121 @@ onMounted(() => {
   color: #666;
 }
 
+/* ========== Hero 数据小卡片 ========== */
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hero-stat-num {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.hero-stat-label {
+  font-size: 13px;
+  color: #888;
+  letter-spacing: 1px;
+}
+
+/* ========== Hero 活动标签 ========== */
+.hero-tags {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.hero-tag-item {
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  font-size: 13px;
+  color: #aaa;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+}
+
+.hero-tag-item:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* ========== Hero 右侧：图片墙 ========== */
 .hero-right {
   display: flex;
   justify-content: flex-end;
 }
 
-.hero-stats {
+.image-wall {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  height: 460px;
+  overflow: hidden;
   width: 100%;
   max-width: 420px;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
 }
 
-.stat-item {
-  padding: 28px 24px;
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+.wall-column {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
 }
 
-.stat-num {
-  font-size: 32px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 8px;
+.wall-track {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  will-change: transform;
 }
 
-.stat-label {
-  font-size: 13px;
-  color: #888;
+.wall-track--up {
+  animation: scrollUp 15s linear infinite;
+}
+
+.wall-track--down {
+  animation: scrollDown 15s linear infinite;
+}
+
+.wall-item {
+  flex-shrink: 0;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.wall-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes scrollUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+
+@keyframes scrollDown {
+  from { transform: translateY(-50%); }
+  to { transform: translateY(0); }
 }
 
 /* ========== 商品区 ========== */
@@ -417,6 +601,38 @@ onMounted(() => {
   max-width: 1400px;
   margin: 0 auto;
   padding: 48px 40px 80px;
+}
+
+/* 滚动播报 */
+.marquee {
+  overflow: hidden;
+  margin-bottom: 40px;
+  padding: 14px 0;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 60px;
+  animation: scrollLeft 40s linear infinite;
+  white-space: nowrap;
+}
+
+.marquee-item {
+  font-size: 14px;
+  color: #666;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 .tabs {
@@ -566,5 +782,66 @@ onMounted(() => {
   background: #ddd;
   color: #999;
   cursor: not-allowed;
+}
+
+/* ========== 响应式 ========== */
+@media (max-width: 1024px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hero-right {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-inner {
+    padding: 0 20px;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .hero {
+    padding: 48px 20px;
+  }
+
+  .hero-left h1 {
+    font-size: 42px;
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 24px 32px;
+  }
+
+  .hero-stat-num {
+    font-size: 18px;
+  }
+
+  .hero-tags {
+    display: none;
+  }
+
+  .image-wall {
+    height: 320px;
+    max-width: 100%;
+  }
+
+  .marquee {
+    margin-bottom: 24px;
+  }
+
+  .goods-section {
+    padding: 32px 20px 48px;
+  }
+
+  .goods-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 16px;
+  }
 }
 </style>

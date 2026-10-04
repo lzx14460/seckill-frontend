@@ -1,0 +1,267 @@
+/* ========== 设计系统变量 ========== */
+:root {
+  /* 画布 */
+  --canvas-night: #000000;
+  --canvas-night-elevated: #0a0a0a;
+  --canvas-light: #ffffff;
+  --canvas-cream: #fbfbf5;
+
+  /* 强调色 */
+  --aloe: #c1fbd4;
+  --pistachio: #d4f9e0;
+
+  /* 灰度阶梯 */
+  --shade-30: #d4d4d8;
+  --shade-40: #a1a1aa;
+  --shade-50: #71717a;
+  --shade-60: #52525b;
+  --shade-70: #3f3f46;
+
+  /* 分割线 */
+  --hairline-light: #e4e4e7;
+  --hairline-dark: #1e2c31;
+
+  /* 文字 */
+  --ink: #000000;
+  --on-primary: #ffffff;
+
+  /* 圆角 */
+  --radius-xs: 4px;
+  --radius-sm: 5px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+  --radius-pill: 9999px;
+
+  /* 间距 */
+  --space-xxs: 2px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+  --space-xxl: 32px;
+  --space-huge: 64px;
+}
+
+/* ========== 全局重置 ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-feature-settings: 'ss03';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--canvas-night);
+  color: var(--on-primary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ========== 排版工具类 ========== */
+.display-xxl {
+  font-size: 96px;
+  font-weight: 330;
+  line-height: 1;
+  letter-spacing: 2.4px;
+  font-feature-settings: 'ss03';
+}
+
+.display-xl {
+  font-size: 70px;
+  font-weight: 330;
+  line-height: 1;
+  font-feature-settings: 'ss03';
+}
+
+.display-lg {
+  font-size: 55px;
+  font-weight: 330;
+  line-height: 1.16;
+  font-feature-settings: 'ss03';
+}
+
+.heading-xl {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: 0.42px;
+}
+
+.heading-lg {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: 0.36px;
+}
+
+.heading-md {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+}
+
+.body-lg {
+  font-size: 18px;
+  font-weight: 450;
+  line-height: 1.56;
+}
+
+.body-md {
+  font-size: 16px;
+  font-weight: 420;
+  line-height: 1.5;
+}
+
+.caption {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.49;
+  letter-spacing: 0.28px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.72px;
+  text-transform: uppercase;
+}
+
+/* ========== 胶囊按钮 ========== */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-size: 16px;
+  font-weight: 420;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+/* 黑底白字 */
+.btn-pill--dark {
+  background: var(--canvas-night);
+  color: var(--on-primary);
+}
+
+.btn-pill--dark:hover {
+  background: var(--shade-70);
+}
+
+/* 白底黑字 */
+.btn-pill--light {
+  background: var(--canvas-light);
+  color: var(--ink);
+}
+
+.btn-pill--light:hover {
+  background: var(--shade-30);
+}
+
+/* 白描边（暗底上用） */
+.btn-pill--outline-dark {
+  background: transparent;
+  color: var(--on-primary);
+  border: 1px solid var(--on-primary);
+}
+
+.btn-pill--outline-dark:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* 黑描边（亮底上用） */
+.btn-pill--outline-light {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+.btn-pill--outline-light:hover {
+  background: var(--ink);
+  color: var(--canvas-light);
+}
+
+/* 薄荷绿 */
+.btn-pill--aloe {
+  background: var(--aloe);
+  color: var(--ink);
+}
+
+.btn-pill--aloe:hover {
+  background: #a8f0c0;
+}
+
+/* 禁用 */
+.btn-pill:disabled,
+.btn-pill[disabled] {
+  background: var(--shade-70);
+  color: var(--shade-50);
+  cursor: not-allowed;
+}
+
+/* ========== 胶囊标签 ========== */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.72px;
+  text-transform: uppercase;
+}
+
+.tag-pill--mint {
+  background: var(--aloe);
+  color: var(--ink);
+}
+
+.tag-pill--shade {
+  background: var(--shade-30);
+  color: var(--ink);
+}
+
+/* ========== 滚动条 ========== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--shade-70);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--shade-60);
+}
