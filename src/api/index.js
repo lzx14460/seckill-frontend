@@ -1,12 +1,11 @@
 import axios from 'axios'
 
 const request = axios.create({
-  baseURL: 'http://localhost:8080',
+  baseURL: '',              // ★ 改成空，走 Vite proxy
   timeout: 10000,
-  withCredentials: true   // 关键：带上 Session Cookie
+  withCredentials: true     // 保留，proxy 也带 Cookie
 })
 
-// 响应拦截器
 request.interceptors.response.use(
   response => response.data,
   error => {

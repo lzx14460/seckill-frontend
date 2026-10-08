@@ -1,0 +1,170 @@
+/* ============ 商家后台全局深色主题 ============ */
+
+/* 页面文字 */
+.merchant-layout h1,
+.merchant-layout h2,
+.merchant-layout h3,
+.merchant-layout h4 {
+  color: #fff;
+}
+
+.merchant-layout p {
+  color: #888;
+}
+
+/* ============ 表格 ============ */
+.el-table {
+  --el-table-bg-color: #141414 !important;
+  --el-table-tr-bg-color: #141414 !important;
+  --el-table-header-bg-color: #1a1a1a !important;
+  --el-table-border-color: #2a2a2a !important;
+  --el-table-text-color: #ddd !important;
+  --el-table-header-text-color: #888 !important;
+  --el-table-row-hover-bg-color: #1f1f1f !important;
+  background: #141414 !important;
+}
+
+.el-table th.el-table__cell {
+  background: #1a1a1a !important;
+  color: #888 !important;
+  border-bottom-color: #2a2a2a !important;
+}
+
+.el-table td.el-table__cell {
+  border-bottom-color: #222 !important;
+  color: #ccc;
+}
+
+.el-table tr {
+  background: #141414 !important;
+}
+
+.el-table__empty-text {
+  color: #555 !important;
+}
+
+/* ============ 输入框 ============ */
+.el-input__wrapper,
+.el-textarea__inner {
+  background: #1a1a1a !important;
+  box-shadow: 0 0 0 1px #2a2a2a inset !important;
+}
+
+.el-input__inner,
+.el-textarea__inner {
+  color: #fff !important;
+}
+
+.el-input__wrapper:hover,
+.el-textarea__inner:hover {
+  box-shadow: 0 0 0 1px #3a3a3a inset !important;
+}
+
+.el-input__wrapper.is-focus,
+.el-textarea__inner:focus {
+  box-shadow: 0 0 0 1px #00d4ff inset !important;
+}
+
+.el-input__inner::placeholder {
+  color: #555 !important;
+}
+
+/* ============ 下拉框 ============ */
+.el-select-dropdown {
+  background: #1a1a1a !important;
+  border: 1px solid #2a2a2a !important;
+}
+
+.el-select-dropdown__item {
+  color: #ccc !important;
+}
+
+.el-select-dropdown__item.hover,
+.el-select-dropdown__item:hover {
+  background: #222 !important;
+}
+
+.el-select-dropdown__item.selected {
+  color: #00d4ff !important;
+}
+
+/* ============ 分页 ============ */
+.el-pagination.is-background .el-pager li {
+  background: #1a1a1a !important;
+  color: #888 !important;
+}
+
+.el-pagination.is-background .el-pager li.is-active {
+  background: #00d4ff !important;
+  color: #fff !important;
+}
+
+.el-pagination.is-background .el-pager li:hover {
+  color: #00d4ff !important;
+}
+
+.el-pagination__total {
+  color: #888 !important;
+}
+
+/* ============ 弹窗 ============ */
+.el-dialog {
+  background: #141414 !important;
+  border: 1px solid #2a2a2a !important;
+}
+
+.el-dialog__title {
+  color: #fff !important;
+}
+
+.el-dialog__body {
+  color: #ccc !important;
+}
+
+.el-message-box {
+  background: #141414 !important;
+  border: 1px solid #2a2a2a !important;
+}
+
+.el-message-box__title,
+.el-message-box__message {
+  color: #fff !important;
+}
+
+/* ============ 表单 ============ */
+.el-form-item__label {
+  color: #aaa !important;
+}
+
+/* ============ 空状态 ============ */
+.el-empty__description p {
+  color: #555 !important;
+}
+
+/* ============ 通用元素 ============ */
+.merchant-layout .table-card,
+.merchant-layout .form-card {
+  background: #141414 !important;
+  border: 1px solid #2a2a2a !important;
+  color: #ddd;
+}
+
+.merchant-layout .ghost-btn {
+  background: #1a1a1a !important;
+  color: #ccc !important;
+  border: 1px solid #2a2a2a !important;
+}
+
+.merchant-layout .ghost-btn:hover {
+  border-color: #00d4ff !important;
+  color: #00d4ff !important;
+}
+
+.merchant-layout .primary-btn {
+  background: #00d4ff !important;
+  color: #000 !important;
+}
+
+.merchant-layout .primary-btn:hover {
+  background: #00e0ff !important;
+}

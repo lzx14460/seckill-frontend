@@ -1,0 +1,124 @@
+/* ============================================================
+   登录弹窗 - 全局样式覆盖
+   ============================================================ */
+
+/* 弹窗外壳 */
+.el-dialog.login-dialog {
+  background: #0a0a0a !important;
+  --el-dialog-bg-color: #0a0a0a !important;
+  --el-dialog-padding-primary: 0 !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6) !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+/* header 彻底干掉 */
+.el-dialog.login-dialog .el-dialog__header {
+  display: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* body */
+.el-dialog.login-dialog .el-dialog__body {
+  padding: 0 !important;
+  background: #0a0a0a !important;
+  color: #fff !important;
+}
+
+/* form label */
+.el-dialog.login-dialog .el-form-item__label {
+  color: #fff !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+}
+
+/* ============ 输入框 ============ */
+.el-dialog.login-dialog .el-input {
+  --el-input-bg-color: transparent !important;
+  --el-input-text-color: #fff !important;
+  --el-input-border-color: transparent !important;
+  --el-input-hover-border-color: rgba(0, 212, 255, 0.35) !important;
+  --el-input-focus-border-color: #00d4ff !important;
+  --el-input-placeholder-color: #4a4a4a !important;
+}
+
+.el-dialog.login-dialog .el-input__wrapper {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  padding: 0 14px !important;
+}
+
+.el-dialog.login-dialog .el-input__wrapper:hover {
+  border-color: rgba(0, 212, 255, 0.35) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.el-dialog.login-dialog .el-input__wrapper.is-focus {
+  border-color: #00d4ff !important;
+  background-color: rgba(0, 212, 255, 0.04) !important;
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.12) !important;
+}
+
+/* ★ 核心：输入文字白色 */
+.el-dialog.login-dialog .el-input__inner {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background-color: transparent !important;
+  height: 44px !important;
+  font-size: 15px !important;
+  caret-color: #00d4ff !important;
+}
+
+.el-dialog.login-dialog .el-input__inner::placeholder {
+  color: #4a4a4a !important;
+  -webkit-text-fill-color: #4a4a4a !important;
+}
+
+/* Chrome 自动填充 */
+.el-dialog.login-dialog .el-input__inner:-webkit-autofill,
+.el-dialog.login-dialog .el-input__inner:-webkit-autofill:hover,
+.el-dialog.login-dialog .el-input__inner:-webkit-autofill:focus,
+.el-dialog.login-dialog .el-input__inner:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #0a0a0a inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  color: #ffffff !important;
+  caret-color: #00d4ff !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* 密码小眼睛 */
+.el-dialog.login-dialog .el-input__password {
+  color: #666 !important;
+}
+.el-dialog.login-dialog .el-input__password:hover {
+  color: #00d4ff !important;
+}
+
+/* ============ 提交按钮 ============ */
+.el-dialog.login-dialog .submit-btn {
+  width: 100% !important;
+  height: 48px !important;
+  margin-top: 12px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  letter-spacing: 4px !important;
+  background: linear-gradient(90deg, #00d4ff, #7b2ff7) !important;
+  border: none !important;
+  border-radius: 8px !important;
+  color: #fff !important;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.el-dialog.login-dialog .submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.35);
+  background: linear-gradient(90deg, #7b2ff7, #00d4ff) !important;
+}
